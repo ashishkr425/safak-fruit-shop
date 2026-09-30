@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Safak Fruit Shop</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+  <div class="container nav">
+
+    <a href="#" class="brand">
+      <span class="brand-logo">🍎</span>
+      <span>Safak <b>Fruit Shop</b></span>
+    </a>
+
+    <nav>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="cart-btn" onclick="openCart()">
+      🛒 Cart
+      <span id="cartCount">0</span>
+    </button>
+
+  </div>
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="container hero-grid">
+
+    <div class="hero-content">
+
+      <span class="eyebrow">
+        FRESH • QUALITY • DAILY
+      </span>
+
+      <h1>
+        Freshness you can
+        <em>taste.</em>
+      </h1>
+
+      <p>
+        Fresh fruits, vegetables, dry fruits and beautiful
+        gift baskets — all available at Safak Fruit Shop.
+      </p>
+
+      <div class="hero-actions">
+
+        <a href="#products" class="btn primary">
+          🛒 Shop Fresh Products
+        </a>
+
+        <a href="#contact" class="btn secondary">
+          📍 Visit Our Shop
+        </a>
+
+      </div>
+
+      <div class="trust">
+
+        <span>✓ Fresh Stock</span>
+        <span>✓ Home Delivery</span>
+        <span>✓ Easy Ordering</span>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+      <div class="fruit-one">🍎</div>
+      <div class="fruit-two">🍊</div>
+      <div class="fruit-three">🍍</div>
+
+      <div class="fruit-basket">
+        🍏 🍌 🍓
+        <br>
+        🥝 🍊 🍎
+      </div>
+
+      <div class="fresh-badge">
+        100%
+        <small>
+          Fresh<br>
+          Selection
+        </small>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section class="categories">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div>
+
+        <span class="eyebrow">
+          BROWSE
+        </span>
+
+        <h2>
+          Shop by Category
+        </h2>
+
+      </div>
+
+    </div>
+
+
+    <div class="cat-grid">
+
+      <button onclick="filterProducts('Fruits')">
+        🍎
+        <span>Fresh Fruits</span>
+      </button>
+
+      <button onclick="filterProducts('Vegetables')">
+        🥕
+        <span>Vegetables</span>
+      </button>
+
+      <button onclick="filterProducts('Dry Fruits')">
+        🥜
+        <span>Dry Fruits</span>
+      </button>
+
+      <button onclick="filterProducts('Gift')">
+        🎁
+        <span>Gift Basket</span>
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section id="products" class="products-section">
+
+  <div class="container">
+
+    <div class="section-head products-head">
+
+      <div>
+
+        <span class="eyebrow">
+          OUR COLLECTION
+        </span>
+
+        <h2>
+          Fresh Picks For You
+        </h2>
+
+      </div>
+
+      <input
+        id="search"
+        class="search"
+        type="text"
+        placeholder="🔎 Search products..."
+        oninput="renderProducts()">
+
+    </div>
+
+
+    <div class="filters">
+
+      <button
+        class="active"
+        onclick="filterProducts('All')">
+        All
+      </button>
+
+      <button onclick="filterProducts('Fruits')">
+        Fruits
+      </button>
+
+      <button onclick="filterProducts('Vegetables')">
+        Vegetables
+      </button>
+
+      <button onclick="filterProducts('Dry Fruits')">
+        Dry Fruits
+      </button>
+
+      <button onclick="filterProducts('Gift')">
+        Gift Basket
+      </button>
+
+    </div>
+
+
+    <div
+      id="productGrid"
+      class="product-grid">
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+  <div class="container about-grid">
+
+    <div class="about-art">
+
+      🍎
+
+      <span>
+        Fresh Every Day
+      </span>
+
+    </div>
+
+
+    <div>
+
+      <span class="eyebrow">
+        ABOUT US
+      </span>
+
+      <h2>
+        Your Neighbourhood Fruit Shop.
+      </h2>
+
+      <p>
+        Safak Fruit Shop brings fresh fruits,
+        vegetables, dry fruits and gift baskets
+        for your everyday needs and special occasions.
+      </p>
+
+      <div class="mini-points">
+
+        <span>✓ Carefully Selected</span>
+        <span>✓ Fresh Products</span>
+        <span>✓ Friendly Service</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+  <div class="container contact-card">
+
+    <div>
+
+      <span class="eyebrow">
+        VISIT / ORDER
+      </span>
+
+      <h2>
+        Safak Fruit Shop
+      </h2>
+
+      <p>
+        📍 Kothi Bazar, near Kallu Ji Pan Dukaan
+      </p>
+
+      <p>
+        🕐 Every Day • 7:00 AM – 8:00 PM
+      </p>
+
+      <p>
+        🚚 Home Delivery Available
+      </p>
+
+    </div>
+
+
+    <div class="contact-actions">
+
+      <a
+        class="btn primary"
+        href="tel:8873142751">
+        📞 Call Shop
+      </a>
+
+      <a
+        class="btn whatsapp"
+        href="https://wa.me/918873142751"
+        target="_blank">
+        💬 Order on WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- CART -->
+
+<div
+  id="overlay"
+  class="overlay"
+  onclick="closeCart(event)">
+
+  <aside
+    class="cart"
+    onclick="event.stopPropagation()">
+
+    <div class="cart-head">
+
+      <h2>
+        Your Cart
+      </h2>
+
+      <button onclick="closeCart()">
+        ✕
+      </button>
+
+    </div>
+
+
+    <div id="cartItems"></div>
+
+
+    <div class="cart-footer">
+
+      <div class="total-row">
+
+        <span>
+          Total
+        </span>
+
+        <strong id="cartTotal">
+          ₹0
+        </strong>
+
+      </div>
+
+
+      <button
+        class="btn primary full"
+        onclick="checkout()">
+
+        Order on WhatsApp
+
+      </button>
+
+    </div>
+
+  </aside>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
